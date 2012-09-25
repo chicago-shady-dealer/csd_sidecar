@@ -1,0 +1,14 @@
+* Shady Dealer Redesign
+** Overview
+   This new version of the site will be a simple off-shoot of
+   Linus. By creating a basic site that makes requests from Linus's
+   API, parses them, and displays the result, we can leave most of the
+   heavy duty lifting to Linus and it's already established database
+   structure will having the added benefits of detaching the display
+   of this content from it's actual location.
+   
+** Design
+   I'd like this site to be simple with a lot of emphasis on simple
+   black lines displayed over a white background. The header should be
+   the exception (if it even is), utilizing the newly redesigned
+   header image in NeoRetroDraw.
