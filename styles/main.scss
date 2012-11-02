@@ -1,0 +1,86 @@
+body {
+    font-family: Bembo;
+    font-size: 100%;
+    p {
+       font-size: 1em; 
+    }
+    
+    header {
+        height: 100px;
+        width: 100%;
+        border-bottom: 3px solid black;
+        img {
+            width: 10%;
+            float: left;
+        }
+        h1 {
+            font-family: NeoRetroDraw;
+            font-size: 3.45em;
+            float: left;
+            margin: 0 auto;
+            margin-left: -0.2em;
+        }
+
+        .rotate {
+            font-family: NeoRetroShadow;
+            font-size: 2.2em;
+            float: left;
+            position: relative;
+            top: 1em;
+            -webkit-transform: rotate(-90deg); 
+            -moz-transform: rotate(-90deg);   
+            margin: 0 auto;
+        }
+
+        h2 {
+            background: #818181;
+            font-family: Gotham;
+            color: white;
+            text-transform: uppercase;
+            font-size: 1.15em;
+            float: left;
+            margin: 0 auto;
+            margin-left: 3.7em;
+        }
+    }
+
+    section {
+        article {
+            h1 {
+                font-family: Gotham;
+                font-size: 1.5em;
+                margin: 10px 0 10px 0;
+            }
+
+            &#primary h1 {
+                text-transform: uppercase;
+                margin: 10px 0 10px 0;
+                height: 30px;
+            }
+
+            p {
+                max-width: 450px;
+                width: 30em;
+                text-align: justify;
+                font-family: Bembo;
+                font-size: 1em;
+            }
+        }
+
+        &#top_stories {
+            float: left;
+        }
+
+        &#main {
+            margin-left: 20px;
+            margin-top: 5px;
+            float: left;
+            border-left: dashed #818181 2px;
+            padding-left: 10px; 
+
+            h1 {
+                font-size: 1.25em;
+            }
+        }
+    }
+}
