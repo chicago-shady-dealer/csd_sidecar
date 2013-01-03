@@ -1,0 +1,62 @@
+%html
+  %head
+    %title Chicago Shady Dealer
+    %link{:href => "/styles/main.css", :media => "screen, handheld", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/styles/enhanced.css", :media => "screen and (min-width 40.5em)", :rel => "stylesheet", :type => "text/css"}/
+    /[if (lt IE 9)&(!IEMobile)]
+      <link rel="stylesheet" type="text/css" href="enhanced.css" />
+    / TODO: Consider respond.js</
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    /
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  %body
+    #container
+      %header
+        %img{:alt => "Chicago Shady Dealer logo", :src => "/images/logo.jpg", :title => "Our logo"}/
+        .rotate The
+        %h1 Chicago Shady Dealer
+        %h2 The Only Intentional Humor Publication of the University of Chicago
+      %section#top_stories
+        %article#primary
+          %h1 Entire Class of 2016 Drowns
+          %img{:alt => "caption", :src => "http://placehold.it/480x200", :title => "title"}/
+          .byline
+            by
+            %span.writer James Ekstrom
+          %p
+            Tragedy struck the University of Chicago last week when
+            the entire class of 2016 drowned in a series of freak
+            accidents across the Chicago area. School officials have
+            attributed the death of every entering first-year in the
+            College to the abolition of a swimming test for entering
+            students, a longstanding tradition abandoned this year with
+            little explanation.
+        %article#secondary
+          %img{:alt => "caption", :src => "http://placehold.it/200x200", :title => "title"}/
+          %h1 This is a headline for an article
+          %p
+            This is some body text. This is some body text. This is
+            some body text. This is some body text. This is some body
+            text. This is some body text.
+      %section#main
+        %article.basic
+          %h1 This is a headline for an article
+          %img{:alt => "caption", :src => "http://placehold.it/200x200", :title => "title"}/
+          %p
+            This is some body text. This is some body text. This is
+            some body text. This is some body text. This is some body
+            text. This is some body text.
+        %article.basic
+          %h1 This is a headline for an article
+          %img{:alt => "caption", :src => "http://placehold.it/200x200", :title => "title"}/
+          %p
+            This is some body text. This is some body text. This is
+            some body text. This is some body text. This is some body
+            text. This is some body text.
+        %article.basic
+          %h1 This is a headline for an article
+          %img{:alt => "caption", :src => "http://placehold.it/200x200", :title => "title"}/
+          %p
+            This is some body text. This is some body text. This is
+            some body text. This is some body text. This is some body
+            text. This is some body text.
