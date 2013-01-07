@@ -14,44 +14,18 @@ body {
     }
     
     header {
-        height: 15%;
-        border-bottom: 3px solid black;
         @include span-columns(12);
+        @include omega;
+        
+        /*background-image: url('/images/header.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+          -webkit-background-origin: border;*/
         img {
-            height: 98%;
-            float: left;
-        }
-        h1 {
-            font-family: NeoRetroDraw;
-            font-size: 3.0em;
-            float: left;
-            margin: 0 auto;
-            margin-left: -0.2em;
-            word-wrap: break-word;
-            height: 98%;
-            @include span-columns(9);
+            @include fill-parent;
         }
 
-        .rotate {
-            font-family: NeoRetroShadow;
-            font-size: 1.5em;
-            float: left;
-            position: relative;
-            top: 0.7em;
-            -webkit-transform: rotate(-90deg); 
-            -moz-transform: rotate(-90deg);   
-            margin: 0 auto;
-        }
-
-        h2 {
-            background: #818181;
-            font-family: Gotham;
-            color: white;
-            text-transform: uppercase;
-            font-size: 0.7em;
-            float: left;
-            margin: 0 auto;
-            margin-left: 3.7em;
+        h1, h2 {
             display: none;
         }
     }
