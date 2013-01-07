@@ -17,6 +17,7 @@ get '/' do
   haml :index
 end
 
-get '/styles/main.css' do
-  scss :'assets/styles/main'
+get "/styles/*.css" do |path|
+  content_type "text/css", charset: "utf-8"
+  scss :"scss/#{path}"
 end

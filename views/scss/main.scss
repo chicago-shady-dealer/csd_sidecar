@@ -1,0 +1,176 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+$mobile: new-breakpoint(max-width 500px 6);
+
+body {
+    margin: 0 auto;
+    font-family: Bembo;
+    font-size: 100%;
+    #container {
+        @include outer-container;
+    }
+    p {
+       font-size: 1em; 
+    }
+    
+    header {
+        height: 15%;
+        border-bottom: 3px solid black;
+        @include span-columns(12);
+        img {
+            height: 98%;
+            float: left;
+        }
+        h1 {
+            font-family: NeoRetroDraw;
+            font-size: 3.0em;
+            float: left;
+            margin: 0 auto;
+            margin-left: -0.2em;
+            word-wrap: break-word;
+            height: 98%;
+            @include span-columns(9);
+        }
+
+        .rotate {
+            font-family: NeoRetroShadow;
+            font-size: 1.5em;
+            float: left;
+            position: relative;
+            top: 0.7em;
+            -webkit-transform: rotate(-90deg); 
+            -moz-transform: rotate(-90deg);   
+            margin: 0 auto;
+        }
+
+        h2 {
+            background: #818181;
+            font-family: Gotham;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.7em;
+            float: left;
+            margin: 0 auto;
+            margin-left: 3.7em;
+            display: none;
+        }
+    }
+
+    section {
+        &#left {
+            @include span-columns(6);
+            @include media($mobile) {
+                @include span-columns(6);
+            }
+            article {
+                img {
+                    @include span-columns(12);
+                }
+            }
+        }
+        &#right {
+            @include span-columns(3);
+            @include media($mobile) {
+                @include span-columns(3);
+            }
+
+            h1 {
+                font-family: NeoRetroDraw;
+                font-size: 1.25em;
+                border-bottom: 1px solid #ccc;
+            }
+
+            ul {
+                border-bottom: 1px solid #ccc;
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                
+                margin-top: 1em;
+                
+                li {
+                    color: black;
+                    margin-bottom: 1em;
+                    .timestamp {
+                        display: inline;
+                        /* float: left; */
+                        color: #818181;
+                        font-size: 0.8em;
+                    }
+                }
+            }
+            
+            article {
+                img {
+                    @include span-columns(12);
+                }
+                h1 {
+                    font-family: Gotham;
+                    font-size: 1.25em;
+                    border-bottom: none;
+                }
+            }
+        }
+        
+        &#sidebar {
+            @include span-columns(3);
+            @include media($mobile) {
+                @include span-columns(3);
+            }
+            
+            article {
+                img {
+                    @include span-columns(12);
+                }
+            }
+            
+            h1 {
+                font-size: 1.25em;
+            }
+        }
+        
+        article {
+            h1 {
+                font-family: Gotham;
+                font-size: 1.5em;
+                margin: 10px 0 10px 0;
+                @include span-columns(12);
+            }
+
+            &.primary {
+                h1 {
+                    text-transform: uppercase;
+                    height: 30px;
+                    margin: 10px 0 10px 0;
+                    @include span-columns(12);
+                }
+                p {
+                    @include span-columns(12);
+                    -webkit-column-count: 3; 
+                    -moz-column-count: 3; 
+                    column-count: 3;
+                }
+            }
+            
+            &.secondary {
+                @include span-columns(3 of 6);
+            }
+
+            .byline {
+                @include span-columns(12);
+                margin-bottom: 8px; 
+                font-style: italic;
+                .writer {
+                    font-style: normal;
+                    font-variant: small-caps;
+                }
+            }
+
+            p {
+                text-align: justify;
+                font-family: Bembo;
+                font-size: 1em;
+            }
+        }
+    }
+}
