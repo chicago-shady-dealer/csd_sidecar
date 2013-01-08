@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 
-log = File.new('logs/sinatra.log', 'a')
+log = File.new('log/sinatra.log', 'a')
 $stdout.reopen(log)
 $stderr.reopen(log)
 
