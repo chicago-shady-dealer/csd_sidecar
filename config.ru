@@ -1,0 +1,2 @@
+require 'csd'
+run Csd

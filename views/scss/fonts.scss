@@ -1,0 +1,139 @@
+/* Proxima */
+@font-face {
+font-family: 'Proxima Nova';
+	src: url('/fonts/proximanova-regular-webfont.eot');
+	src: url('/fonts/proximanova-regular-webfont.eot?#iefix') format('eot'),
+	url('/fonts/proximanova-regular-webfont.woff') format('woff'),
+	url('/fonts/proximanova-regular-webfont.ttf') format('truetype'),
+	url('/fonts/proximanova-regular-webfont.svg#ProximaNova') format('svg')
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-style: italic;
+	src: url('/fonts/proximanova-regitalic-webfont.eot');
+	src: url('/fonts/proximanova-regitalic-webfont.eot?#iefix') format('eot'),
+             url('/fonts/proximanova-regitalic-webfont.woff') format('woff'),
+	     url('/fonts/proximanova-regitalic-webfont.ttf') format('truetype'),
+	     url('/fonts/proximanova-regitalic-webfont.svg#ProximaNovaRegularItalic') format('svg')
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-weight: 300;
+	src: url('/fonts/proximanova-light-webfont.eot');
+	src: url('/fonts/proximanova-light-webfont.eot?#iefix') format('eot'),
+             url('/fonts/proximanova-light-webfont.woff') format('woff'),
+	     url('/fonts/proximanova-light-webfont.ttf') format('truetype'),
+	     url('/fonts/proximanova-light-webfont.svg#ProximaNovaLight') format('svg')
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-weight: 600;
+	src: url('/fonts/proximanova-semibold-webfont.eot');
+	src: url('/fonts/proximanova-semibold-webfont.eot?#iefix') format('eot'),
+             url('/fonts/proximanova-semibold-webfont.woff') format('woff'),
+	     url('/fonts/proximanova-semibold-webfont.ttf') format('truetype'),
+	     url('/fonts/proximanova-semibold-webfont.svg#ProximaNovaSemibold') format('svg')
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-weight: 600;
+	font-style: italic;
+	src: url('/fonts/proximanova-semibolditalic-webfont.eot');
+	src: url('/fonts/proximanova-semibolditalic-webfont.eot?#iefix') format('eot'),
+             url('/fonts/proximanova-semibolditalic-webfont.woff') format('woff'),
+	     url('/fonts/proximanova-semibolditalic-webfont.ttf') format('truetype'),
+	     url('/fonts/proximanova-semibolditalic-webfont.svg#ProximaNovaSemiboldItalic') format('svg')
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-weight: bold;
+	src: url('/fonts/proximanova-bold-webfont.eot');
+	src: url('/fonts/proximanova-bold-webfont.eot?#iefix') format('eot'),
+	     url('/fonts/proximanova-bold-webfont.woff') format('woff'),
+	     url('/fonts/proximanova-bold-webfont.ttf') format('truetype'),
+	     url('/fonts/proximanova-bold-webfont.svg#ProximaNovaBold') format('svg')
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-weight: bold;
+	font-style: italic;
+	src: url('/fonts/proximanova-boldit-webfont.eot');
+	src: url('/fonts/proximanova-boldit-webfont.eot?#iefix') format('eot'),
+             url('/fonts/proximanova-boldit-webfont.woff') format('woff'),
+	     url('/fonts/proximanova-boldit-webfont.ttf') format('truetype'),
+	     url('/fonts/proximanova-boldit-webfont.svg#ProximaNovaBoldItalic') format('svg')
+}
+
+@font-face {
+	font-family: 'Proxima Nova';
+	font-weight: 900;
+	src: url('/fonts/proximanova-extrabold-webfont.eot');
+	src: url('/fonts/proximanova-extrabold-webfont.eot?#iefix') format('eot'),
+             url('/fonts/proximanova-extrabold-webfont.woff') format('woff'),
+             url('/fonts/proximanova-extrabold-webfont.ttf') format('truetype'),
+             url('/fonts/proximanova-extrabold-webfont.svg#ProximaNovaExtraBold') format('svg')
+}
+
+@font-face {
+    font-family: 'Cardo';
+    font-weight: normal;
+    src: url('/fonts/Cardo104s-webfont.eot');
+    src: url('/fonts/Cardo104s-webfont.eot?#iefix') format('eot'),
+         url('/fonts/Cardo104s-webfont.woff') format('woff'),
+         url('/fonts/Cardo104s-webfont.ttf') format('truetype'),
+         url('/fonts/Cardo104s-webfont.svg#CardoRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'Cardo';
+    font-weight: normal;
+    font-style: italic;
+    src: url('/fonts/Cardoi99-webfont.eot');
+    src: url('/fonts/Cardoi99-webfont.eot?#iefix') format('eot'),
+         url('/fonts/Cardoi99-webfont.woff') format('woff'),
+         url('/fonts/Cardoi99-webfont.ttf') format('truetype'),
+         url('/fonts/Cardoi99-webfont.svg#CardoRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'Cardo';
+    font-weight: bold;
+    src: url('/fonts/Cardob101-webfont.eot');
+    src: url('/fonts/Cardob101-webfont.eot?#iefix') format('eot'),
+         url('/fonts/Cardob101-webfont.woff') format('woff'),
+         url('/fonts/Cardob101-webfont.ttf') format('truetype'),
+         url('/fonts/Cardob101-webfont.svg#CardoRegular') format('svg');
+}
+
+@font-face {
+    font-family: 'NeoRetroDraw';
+    src: url('/fonts/NEORD___-webfont.eot');
+    src: url('/fonts/NEORD___-webfont.eot?#iefix') format('eot'),
+         url('/fonts/NEORD___-webfont.woff') format('woff'),
+         url('/fonts/NEORD___-webfont.ttf') format('truetype'),
+         url('/fonts/NEORD___-webfont.svg#NeoRetroDraw') format('svg');
+}
+
+@font-face {
+    font-family: 'NeoRetroFill';
+    src: url('/fonts/NEORF___-webfont.eot');
+    src: url('/fonts/NEORF___-webfont.eot?#iefix') format('eot'),
+         url('/fonts/NEORF___-webfont.woff') format('woff'),
+         url('/fonts/NEORF___-webfont.ttf') format('truetype'),
+         url('/fonts/NEORF___-webfont.svg#NeoRetroFill') format('svg');
+}
+
+@font-face {
+    font-family: 'NeoRetroShadow';
+    src: url('/fonts/NEORS___-webfont.eot');
+    src: url('/fonts/NEORS___-webfont.eot?#iefix') format('eot'),
+         url('/fonts/NEORS___-webfont.woff') format('woff'),
+         url('/fonts/NEORS___-webfont.ttf') format('truetype'),
+         url('/fonts/NEORS___-webfont.svg#NeoRetroShadow') format('svg');
+}

@@ -1,0 +1,19 @@
+!!!5
+%html
+  %head
+    %title Chicago Shady Dealer
+    %link{:href => "/styles/main.css", :media => "screen, handheld", :rel => "stylesheet", :type => "text/css"}/
+    /[if (lt IE 9)&(!IEMobile)]
+      <link rel="stylesheet" type="text/css" href="enhanced.css" />
+    / TODO: Consider respond.js</
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    /
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  %body{:id => "#{@controller}"}
+    #container
+      %header
+        %a{:href => "/"}
+          %img{:alt => "The Chicago Shady Dealer", :title => "Chicago Shady Dealer masthead", :src => "/images/header.svg"}
+        %h1 The Chicago Shady Dealer
+        %h2 The Only Intentional Humor Publication of the University of Chicago
+      = yield

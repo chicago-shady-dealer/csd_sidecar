@@ -1,114 +1,51 @@
-%html
-  %head
-    %title Chicago Shady Dealer
-    %link{:href => "/styles/main.css", :media => "screen, handheld", :rel => "stylesheet", :type => "text/css"}/
-    /[if (lt IE 9)&(!IEMobile)]
-      <link rel="stylesheet" type="text/css" href="enhanced.css" />
-    / TODO: Consider respond.js</
-    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    /
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-  %body
-    #container
-      %header
-        %img{:alt => "The Chicago Shady Dealer", :title => "Chicago Shady Dealer masthead", :src => "/images/header.svg"}
-        %h1 The Chicago Shady Dealer
-        %h2 The Only Intentional Humor Publication of the University of Chicago
-        
-      %section#left
-        %article.primary
-          %h1 Entire Class of 2016 Drowns
-          %img{:alt => "caption", :src => "http://placehold.it/480x200", :title => "title"}/
-          .byline
-            by
-            %span.writer James Ekstrom
-          %p
-            Tragedy struck the University of Chicago last week when
-            the entire class of 2016 drowned in a series of freak
-            accidents across the Chicago area. School officials have
-            attributed the death of every entering first-year in the
-            College to the abolition of a swimming test for entering
-            students, a longstanding tradition abandoned this year with
-            little explanation.
+%section#left
+  %article.primary
+    %h1= headline_url(@primary)
+    = primary_img(@primary)
+    .byline
+      by
+      %span.writer= @primary.byline
+    %p= excerpt(@primary, 100)
 
-        %article.secondary
-          %img{:alt => "caption", :src => "http://placehold.it/200x200", :title => "title"}/
-          %h1 This is a headline for an article
-          %p
-            Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit. Praesent blandit consequat lacus, quis rutrum lacus
-            tristique vel. Vestibulum iaculis auctor
-            blandit. 
-            
-        %article.secondary
-          %img{:alt => "caption", :src => "http://placehold.it/200x200", :title => "title"}/
-          %h1 Here's another headline for an article, this
-          %p
-            Sed mattis tellus eu erat feugiat pellentesque. Sed
-            iaculis massa vulputate dui fermentum sagittis. Praesent
-            massa augue, aliquam a scelerisque nec, pharetra non
-            arcu. 
-            
-      %section#sidebar
-        %article
-          %h1 This is a headline for an article
-          %p
-            Aenean eu euismod lorem. Nam venenatis purus quam, et
-            vulputate elit. Sed pulvinar hendrerit purus rutrum
-            gravida. Sed nulla orci, ornare vel gravida nec, eleifend
-            sed elit. Curabitur consequat lacus eu nunc venenatis
-            rutrum. Duis vestibulum dictum magna scelerisque
-            rutrum. Nam magna lacus, vestibulum ut consequat in,
-            dapibus eget risus. 
+  %article.secondary
+    = secondary_img(@s1)
+    %h1= headline_url(@s1)
+    .byline
+      by
+      %span.writer= @s1.byline
+    %p= excerpt(@s1, 50)
 
-            
-        %article
-          %h1 This is a headline for an article
-          %p
-            Aliquam fringilla, nulla non lacinia porta, tellus lorem
-            elementum nulla, at porttitor purus sapien sed
-            erat. Praesent at lectus ac lacus posuere feugiat a sed
-            nulla. In aliquam leo commodo elit eleifend ultrices.
+  %article.secondary
+    = secondary_img(@s2)
+    %h1= headline_url(@s2)
+    .byline
+      by
+      %span.writer= @s2.byline
+    %p= excerpt(@s2, 50)
 
-            
-        %article
-          %h1 This is a headline for an article
-          %p
-            Phasellus vel nisi lorem, non consectetur neque. Nam
-            ultrices feugiat egestas. Duis aliquet faucibus arcu, eget
-            vehicula nunc pellentesque ac. Aliquam elementum commodo
-            dolor vel eleifend. Integer nulla massa, vulputate eget
-            euismod non, congue vel elit. Sed dictum varius erat, ut
-            facilisis dui pulvinar ut.
+%section#sidebar
+  - @sidebar.each do |a|
+    %article
+      %h1= headline_url(a)
+      .byline
+        by
+        %span.writer= a.byline
+    %p= excerpt(a, 50)
 
+%section#right
+  %h1 Also in the news
+  %ul
+    - @headlines.each do |a|
+      %li
+        = headline_url(a)
+        .byline
+          by 
+          = a.byline
 
-      %section#right
-        %h1 Also in the news
-        %ul
-          %li
-            This is a headline for an article
-            .timestamp Aug. 21, 2013
-          %li
-            This is a longer headline for an article, too
-            .timestamp Aug. 22, 2013
-          %li
-            Area man runs out of fake article headline ideas
-            .timestamp Aug. 23, 2013
-          %li
-            This is a headline for an article
-            .timestamp Aug. 24, 2013
-          %li
-            And finally, a shitty headline because, seriously, it's hard to come up with these
-            .timestamp Aug. 25, 2013
-          
-        %article
-          %h1 This article has a headline with the word headline in it
-          %img{:alt => "caption", :src => "http://placehold.it/200x200", :title => "title"}/
-          %p
-            Vivamus at leo tortor. Nulla eleifend arcu scelerisque
-            odio interdum vel imperdiet est malesuada. Fusce
-            ullamcorper tempor risus, et dapibus dui dignissim ut. In
-            interdum dapibus tellus vitae tempor. Vestibulum eu
-            consectetur magna. Morbi tempor, eros a tempor adipiscing,
-            lacus magna malesuada purus, sed rutrum est diam sit amet
-            neque. Sed id sodales ipsum. 
+  %article
+    %h1= headline_url(@s3)
+    = secondary_img(@s3)
+    .byline
+      by
+      %span.writer= @s3.byline
+    %p= excerpt(@s3, 50)

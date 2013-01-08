@@ -1,16 +1,37 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
+@import "fonts";
 $mobile: new-breakpoint(max-width 500px 6);
 
 body {
     margin: 0 auto;
-    font-family: Bembo;
+    font-family: "Cardo";
+    line-height: 1.2em;
     font-size: 100%;
     #container {
         @include outer-container;
     }
+    
     p {
-       font-size: 1em; 
+       text-align: justify;
+       font-family: "Cardo";
+       line-height: 1.2em;
+       font-size: 1em;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+            color: #646464;
+        }
+        &#continued {
+            color: #818181;
+            font-size: 0.8em;
+            &#continued:hover {
+                color: black;
+            }
+        }
     }
     
     header {
@@ -21,6 +42,7 @@ body {
           background-repeat: no-repeat;
           background-size: contain;
           -webkit-background-origin: border;*/
+        
         img {
             @include fill-parent;
         }
@@ -39,6 +61,7 @@ body {
             article {
                 img {
                     @include span-columns(12);
+                    margin-bottom: 5px;
                 }
             }
         }
@@ -65,7 +88,7 @@ body {
                 li {
                     color: black;
                     margin-bottom: 1em;
-                    .timestamp {
+                    .byline {
                         display: inline;
                         /* float: left; */
                         color: #818181;
@@ -77,9 +100,10 @@ body {
             article {
                 img {
                     @include span-columns(12);
+                    margin-bottom: 5px;
                 }
                 h1 {
-                    font-family: Gotham;
+                    font-family: "Proxima Nova";
                     font-size: 1.25em;
                     border-bottom: none;
                 }
@@ -105,8 +129,8 @@ body {
         
         article {
             h1 {
-                font-family: Gotham;
-                font-size: 1.5em;
+                font-family: "Proxima Nova";
+                font-size: 1.3em;
                 margin: 10px 0 10px 0;
                 @include span-columns(12);
             }
@@ -114,15 +138,14 @@ body {
             &.primary {
                 h1 {
                     text-transform: uppercase;
-                    height: 30px;
                     margin: 10px 0 10px 0;
                     @include span-columns(12);
                 }
                 p {
                     @include span-columns(12);
-                    -webkit-column-count: 3; 
-                    -moz-column-count: 3; 
-                    column-count: 3;
+                    -webkit-column-count: 2; 
+                    -moz-column-count: 2; 
+                    column-count: 2;
                 }
             }
             
@@ -142,8 +165,36 @@ body {
 
             p {
                 text-align: justify;
-                font-family: Bembo;
+                font-family: "Cardo";
+		line-height: 1.2em;
                 font-size: 1em;
+            }
+        }
+    }
+}
+
+body#show {
+    article {
+        h1 {
+            font-family: "Proxima Nova";
+            font-size: 1.5em;
+        }
+        #byline {
+            font-style: italic;
+            .writer {
+                font-style: normal;
+            }
+        }
+        #body {
+            @include span-columns(6);
+            text-align: justify;
+            p {
+            }
+        }
+        #images {
+            @include span-columns(4);
+            #images img {
+                @include span-columns(4);
             }
         }
     }

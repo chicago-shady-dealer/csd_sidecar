@@ -1,6 +1,20 @@
 !!!5
 %body
-  %h1= @article.headline
-  %div= @article.byline
-  %div!= @article.clean_body
-  
+  %article
+    %h1=   @article.headline
+    #byline
+      by
+      %span.writer= @article.byline
+    #body!=   @article.clean_body
+    #images  
+      -  @article.images.each do |i|
+        = img i.file.url, h(i.description)
+  %section#right
+    %h1 Also in the news
+    %ul
+      - @sidebar_headlines.each do |a|
+        %li
+          = headline_url(a)
+          .byline
+            by 
+            = a.byline
