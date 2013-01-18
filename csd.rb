@@ -44,7 +44,8 @@ end
 
 get '/articles/:id' do
   @controller = "show"
-  @sidebar_headlines = Article.find(:all, :params => {:issue_id => ISSUE_ID}).sort_by { rand }.slice(0, 5)
+  @in_the_news = Article.find(:all, :params => {:issue_id => ISSUE_ID}).sort_by { rand }.slice(0, 5)
+  # @from_the_archive = Article.find(:all).select {|a| not a.in? @in_the_news}.sort_by { rand }.slice(0, 5)
   @article = Article.find(params[:id])
   haml :show
 end
@@ -56,8 +57,8 @@ end
 get '/' do
   @controller = "index"
   
-  all_articles = Article.find(:all, :params => {:issue_id => ISSUE_ID})
-  @articles_with_images = all_articles.select {|a| not (a.images.nil? or a.images.empty?) }
+  current_issue = Article.find(:all, :params => {:issue_id => ISSUE_ID})
+  @articles_with_images = current_issue.select {|a| not (a.images.nil? or a.images.empty?) }
   
   @primary = @articles_with_images[0]
   @s1 = @articles_with_images[1]
@@ -65,7 +66,7 @@ get '/' do
   @s3 = @articles_with_images[3]
   
   used_ids = [@primary, @s1, @s2, @s3].map {|a| a.id}
-  @rest = all_articles.select {|a| not a.id.in? used_ids}
+  @rest = current_issue.select {|a| not a.id.in? used_ids}
   @sidebar = @rest[0,3]
   @headlines = @rest[3, @rest.length - 3].sort_by { rand }.slice(0, 5)
   

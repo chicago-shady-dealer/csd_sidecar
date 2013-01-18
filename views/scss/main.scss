@@ -2,6 +2,8 @@
 @import "neat/neat";
 @import "fonts";
 $mobile: new-breakpoint(max-width 500px 6);
+$narrow: new-breakpoint(max-width 900px 12);
+$visual_grid: true;
 
 @mixin image-2x($image, $width, $height) {
   @media (min--moz-device-pixel-ratio: 1.3),
@@ -52,13 +54,10 @@ body {
         
         background-image: url('/images/header.png');
         @include image-2x("/images/header2x.png", 1100, 92);
+        
         background-repeat: no-repeat;
         background-size: contain;
         -webkit-background-origin: border;
-        
-        img {
-            @include fill-parent;
-        }
 
         h1, h2 {
             display: none;
@@ -200,15 +199,46 @@ body#show {
         }
         #body {
             @include span-columns(6);
+            @include media($mobile) {
+                @include span-columns(12);
+            }
             text-align: justify;
             p {
             }
         }
         #images {
-            @include span-columns(4);
-            #images img {
-                @include span-columns(4);
+            @include span-columns(3);
+            @include media($narrow) {
+                @include span-columns(6 of 12);
             }
+            @include media($mobile) {
+                @include span-columns(6 of 6);
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    section#right {
+        @include span-columns(6);
+        @include media($narrow) {
+            @include span-columns(6);
+        }
+        @include media($mobile) {
+            @include span-columns(12);
+        }
+        
+        #in_the_news {
+            @include span-columns(6);
+            
+            @include media($narrow) {
+                @include span-columns(12);
+            }
+            
+            @include media($mobile) {
+                @include span-columns(12);
+            }
+            
         }
     }
 }
