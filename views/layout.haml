@@ -1,7 +1,9 @@
 !!!5
 %html
   %head
-    %title Chicago Shady Dealer
+    %title
+      The Chicago Shady Dealer 
+      = yield_content :title
     %link{:href => "/styles/main.css", :media => "screen, handheld", :rel => "stylesheet", :type => "text/css"}/
     /[if (lt IE 9)&(!IEMobile)]
       <link rel="stylesheet" type="text/css" href="enhanced.css" />
@@ -16,4 +18,20 @@
           %img{:alt => "The Chicago Shady Dealer", :title => "Chicago Shady Dealer masthead", :src => "/images/header.png", :style => "visibility: hidden"}
         %h1 The Chicago Shady Dealer
         %h2 The Only Intentional Humor Publication of the University of Chicago
-      = yield
+      #main= yield
+      %footer
+        #copyright
+          = "Copyright 2005&ndash;#{Time.now.strftime("%Y")}:"
+          %cite The Chicago Shady Dealer
+        #metapages
+          %a{:href => "/"} Home
+          %a{:href => "/about"} About
+          %a{:href => "/archive"} Archive 
+        #powered_by
+          Designed by
+          %a{:href => "http://dominick.me"}
+            D. LoBraico,
+          Powered by
+          %a{:href => "http://github.com/pygatea/linus"}
+            %span{:style => "color: #dd0000;"} Linus
+          

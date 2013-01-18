@@ -124,7 +124,8 @@ font-family: 'Proxima Nova';
          url('/fonts/NEORD___-webfont.svg#NeoRetroDraw') format('svg');
 }
 
-/* @font-face {
+/*
+@font-face {
     font-family: 'NeoRetroFill';
     src: url('/fonts/NEORF___-webfont.eot');
     src: url('/fonts/NEORF___-webfont.eot?#iefix') format('eot'),
@@ -132,6 +133,7 @@ font-family: 'Proxima Nova';
          url('/fonts/NEORF___-webfont.ttf') format('truetype'),
          url('/fonts/NEORF___-webfont.svg#NeoRetroFill') format('svg');
 }
+*/
 
 @font-face {
     font-family: 'NeoRetroShadow';
@@ -140,4 +142,4 @@ font-family: 'Proxima Nova';
          url('/fonts/NEORS___-webfont.woff') format('woff'),
          url('/fonts/NEORS___-webfont.ttf') format('truetype'),
          url('/fonts/NEORS___-webfont.svg#NeoRetroShadow') format('svg');
-} */
+} 

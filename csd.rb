@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/content_for'
 require 'sanitize'
 require './models/article.rb'
 
@@ -71,6 +72,16 @@ get '/' do
   @headlines = @rest[3, @rest.length - 3].sort_by { rand }.slice(0, 5)
   
   haml :index
+end
+
+get '/about' do
+  @controller = "about"
+  haml :about
+end
+
+get '/archive' do
+  @controller = "archive"
+  haml :archive
 end
 
 get "/styles/*.css" do |path|

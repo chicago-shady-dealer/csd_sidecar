@@ -33,6 +33,10 @@ body {
        font-size: 1em;
     }
 
+    p a, ul li a {
+        border-bottom: 1px dashed #ccc;
+    }
+
     a {
         text-decoration: none;
         color: black;
@@ -183,6 +187,27 @@ body {
             }
         }
     }
+    footer {
+        @include span-columns(12);
+        border-top: 1px solid #ccc;
+        padding-top: 4px;
+        font-family: "Proxima Nova";
+        font-size: 0.8em;
+        #copyright {
+            @include span-columns(4);
+        }
+        #metapages {
+            @include span-columns(4);
+            text-align: center;
+            a {
+                padding-right: 10px;
+            }
+        }
+        #powered_by {
+            @include span-columns(4);
+            text-align: right;
+        }
+    }
 }
 
 body#show {
@@ -241,5 +266,53 @@ body#show {
             }
             
         }
+    }
+}
+
+body#about {
+    h2, h3 {
+        font-family: "Proxima Nova";
+        font-weight: bold;
+    }
+    #header {
+        border-bottom: 1px solid #ccc;
+        @include span-columns(12);
+        text-align: jusify;
+        h1 {
+            #the {
+                font-family: "NeoRetroShadow";
+                clear: both;
+                display: block;
+                line-height: 1.2em;
+            }
+            font-family: "NeoRetroDraw";
+            margin-bottom: 0.2em;
+        }
+        h2 {
+            margin-top: 0;
+            text-indent: 2px;
+            font-size: 1.7em;
+            letter-spacing: 3px;
+        }
+    }
+    #introduction {
+        @include span-columns(6);
+    }
+    #board {
+        @include span-columns(3);
+    }
+    #writers {
+        @include span-columns(3);
+        @include omega;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0; 
+    } 
+}
+
+body#archive {
+    h1 {
+        font-family: "Proxima Nova";
     }
 }
