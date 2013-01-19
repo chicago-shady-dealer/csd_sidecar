@@ -22,19 +22,23 @@ helpers do
   
   def secondary_img(article)
     image = article.images.first
-    path = "http://linus.chicagoshadydealer.com#{image.file.secondary.url}"
+    path = "#{image.file.secondary.url}"
     alt = image.description
-    "<img src='#{path}' alt='#{alt}' />"
+    "<img src='http://linus.chicagoshadydealer.com#{path}' alt='#{alt}' />"
   end
   
   def h(text)
     Rack::Utils.escape_html(text)
   end
 
-  def headline_url(article)
+  def headline_link(article)
     headline = article.headline
     url = "/articles/#{article.id}"
     "<a href='#{url}'>#{headline}</a>"
+  end
+
+  def pdf_link(url)
+    "<a href='http://linus.chicagoshadydealer.com#{url}'>(PDF)</a>"
   end
 
   def excerpt(article, length)
@@ -87,7 +91,9 @@ get '/archive' do
     if @issues[i.volume].nil?
       @issues[i.volume] = {}
     end
-    @issues[i.volume][i.issue] = Article.find(:all, :params => {:issue_id => i})
+    @issues[i.volume][i.issue] =
+      [i.published_issue.url,
+       Article.find(:all, :params => {:issue_id => i})]
   end
 
   haml :archive

@@ -1,6 +1,6 @@
 %section#left
   %article.primary
-    %h1= headline_url(@primary)
+    %h1= headline_link(@primary)
     = primary_img(@primary)
     .byline
       by
@@ -9,7 +9,7 @@
 
   %article.secondary
     = secondary_img(@s1)
-    %h1= headline_url(@s1)
+    %h1= headline_link(@s1)
     .byline
       by
       %span.writer= @s1.byline
@@ -17,7 +17,7 @@
 
   %article.secondary
     = secondary_img(@s2)
-    %h1= headline_url(@s2)
+    %h1= headline_link(@s2)
     .byline
       by
       %span.writer= @s2.byline
@@ -26,7 +26,7 @@
 %section#sidebar
   - @sidebar.each do |a|
     %article
-      %h1= headline_url(a)
+      %h1= headline_link(a)
       .byline
         by
         %span.writer= a.byline
@@ -37,13 +37,13 @@
   %ul
     - @headlines.each do |a|
       %li
-        = headline_url(a)
+        = headline_link(a)
         .byline
           by 
           = a.byline
 
   %article
-    %h1= headline_url(@s3)
+    %h1= headline_link(@s3)
     = secondary_img(@s3)
     .byline
       by

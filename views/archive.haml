@@ -2,17 +2,18 @@
 
 #issues
   - @issues.keys.each do |v|
-    %h2= "Volume #{v}"
-    - @issues[v].keys.each do |i|
-      .issue
-        %h3= "Issue #{i}"
-        %ul
-          - @issues[v][i].each do |a|
-            %li
-              = headline_url(a)
-              .byline
-                by 
-                = a.byline
-
-#old_issues
-  %h2 Older Issues
+    %section.volume{:id => "#{v}"}
+      %h2= "Volume #{v}"
+      %section.issues
+        - @issues[v].keys.each do |i|
+          .issue{:id => "#{i}"}
+            %h3
+              = "Issue #{i}"
+              %span.pdf= pdf_link(@issues[v][i][0]) unless @issues[v][i][0].nil?
+            %ul
+              - @issues[v][i][1].each do |a|
+                %li
+                  = headline_link(a)
+                  .byline
+                    by 
+                    = a.byline

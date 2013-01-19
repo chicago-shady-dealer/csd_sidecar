@@ -5,12 +5,10 @@
       The Chicago Shady Dealer 
       = yield_content :title
     %link{:href => "/styles/main.css", :media => "screen, handheld", :rel => "stylesheet", :type => "text/css"}/
-    /[if (lt IE 9)&(!IEMobile)]
-      <link rel="stylesheet" type="text/css" href="enhanced.css" />
-    / TODO: Consider respond.js</
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-    /
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"}
+    %script{:src => "/javascripts/application.js"}
+      
   %body{:id => "#{@controller}"}
     #container
       %header

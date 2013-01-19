@@ -328,9 +328,13 @@ body#archive {
             @include media($narrow) {
                 @include span-columns(12);
             }
-            
             @include media($mobile) {
                 @include span-columns(12);
+            }
+            
+            .pdf {
+                font-family: "Proxima Nova";
+                font-size: 0.7em;
             }
             ul {
                 margin: 0;
@@ -350,13 +354,6 @@ body#archive {
                     }
                 }
             }
-        }
-    }
-    
-    #old_issues {
-        @include span-columns(12);
-        h2 {
-            font-family: "Proxima Nova";
         }
     }
 }
