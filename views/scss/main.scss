@@ -312,7 +312,51 @@ body#about {
 }
 
 body#archive {
+    @include span-columns(12);
     h1 {
         font-family: "Proxima Nova";
+    }
+    #issues {
+        @include span-columns(12);
+        @include omega;
+        h2 {
+        font-family: "Proxima Nova";
+        }
+        .issue {
+            @include span-columns(6 of 12);
+            @include omega(2n);
+            @include media($narrow) {
+                @include span-columns(12);
+            }
+            
+            @include media($mobile) {
+                @include span-columns(12);
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                
+                margin-top: 1em;
+                
+                li {
+                    color: black;
+                    margin-bottom: 1em;
+                    .byline {
+                        display: inline;
+                        /* float: left; */
+                        color: #818181;
+                        font-size: 0.8em;
+                    }
+                }
+            }
+        }
+    }
+    
+    #old_issues {
+        @include span-columns(12);
+        h2 {
+            font-family: "Proxima Nova";
+        }
     }
 }

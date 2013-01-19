@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/content_for'
 require 'sanitize'
 require './models/article.rb'
+require './models/published_issue.rb'
 
 set :haml, :format => :html5
 
@@ -81,6 +82,14 @@ end
 
 get '/archive' do
   @controller = "archive"
+  @issues = {}
+  PublishedIssue.find(:all).map do |i|
+    if @issues[i.volume].nil?
+      @issues[i.volume] = {}
+    end
+    @issues[i.volume][i.issue] = Article.find(:all, :params => {:issue_id => i})
+  end
+
   haml :archive
 end
 
