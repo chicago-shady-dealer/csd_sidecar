@@ -1,5 +1,7 @@
 require 'sinatra'
 require 'sinatra/content_for'
+require 'rack/cache'
+
 require 'sanitize'
 require './models/article.rb'
 require './models/published_issue.rb'
@@ -7,6 +9,15 @@ require './models/published_issue.rb'
 set :haml, :format => :html5
 
 ISSUE_ID = 3 # FIXME 
+
+use Rack::Cache,
+  :verbose => true,
+  :metastore => "file:/tmp/cache/meta",
+  :entitystore => "file:/tmp/cache/body"
+
+before do
+    cache_control :public, :must_revalidate, :max_age => 600
+end
 
 helpers do
   def img(path, alt)
@@ -50,9 +61,9 @@ end
 
 get '/articles/:id' do
   @controller = "show"
-  @in_the_news = Article.find(:all, :params => {:issue_id => ISSUE_ID}).sort_by { rand }.slice(0, 5)
-  # @from_the_archive = Article.find(:all).select {|a| not a.in? @in_the_news}.sort_by { rand }.slice(0, 5)
   @article = Article.find(params[:id])
+  last_modified @article.updated_at
+  @in_the_news = Article.find(:all, :params => {:issue_id => ISSUE_ID}).sort_by { rand }.slice(0, 5)
   haml :show
 end
 
