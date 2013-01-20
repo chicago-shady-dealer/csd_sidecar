@@ -16,7 +16,7 @@
     %ul
       - @in_the_news.each do |a|
         %li
-          = headline_url(a)
+          = headline_link(a)
           .byline
             by 
             = a.byline
@@ -26,7 +26,7 @@
   /  %ul
   /    - @from_the_archive.each do |a|
   /      %li
-  /        = headline_url(a)
+  /        = headline_link(a)
   /        .byline
   /          by 
   /          = a.byline

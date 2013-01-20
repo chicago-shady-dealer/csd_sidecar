@@ -24,6 +24,10 @@ body {
     font-size: 100%;
     #container {
         @include outer-container;
+        /*border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        padding-left: 5px;
+        padding-right: 5px;*/
     }
     
     p {
@@ -57,7 +61,8 @@ body {
         @include omega;
         
         background-image: url('/images/header.png');
-        @include image-2x("/images/header2x.png", 1100, 92);
+        background-size: 1100px 92px;
+        @include image-2x("/images/header2x.png", 1100px, 92px);
         
         background-repeat: no-repeat;
         background-size: contain;
@@ -316,11 +321,14 @@ body#archive {
     h1 {
         font-family: "Proxima Nova";
     }
-    #issues {
+    #archive_contents {
         @include span-columns(12);
         @include omega;
         h2 {
         font-family: "Proxima Nova";
+        }
+        .issues {
+            display: none;
         }
         .issue {
             @include span-columns(6 of 12);
@@ -335,6 +343,10 @@ body#archive {
             .pdf {
                 font-family: "Proxima Nova";
                 font-size: 0.7em;
+            }
+            
+            h3 {
+                margin: 0;
             }
             ul {
                 margin: 0;

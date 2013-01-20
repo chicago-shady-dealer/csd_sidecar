@@ -1,11 +1,11 @@
 %h1 Archive
 
-#issues
-  - @issues.keys.each do |v|
+#archive_contents
+  - @issues.keys.sort.reverse.each do |v|
     %section.volume{:id => "#{v}"}
       %h2= "Volume #{v}"
       %section.issues
-        - @issues[v].keys.each do |i|
+        - @issues[v].keys.sort.each do |i|
           .issue{:id => "#{i}"}
             %h3
               = "Issue #{i}"
