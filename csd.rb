@@ -104,7 +104,9 @@ get '/archive' do
     end
     @issues[i.volume][i.issue] =
       [i.published_issue.url,
-       Article.find(:all, :params => {:issue_id => i})]
+       if i.volume >= 9 then
+         Article.find(:all, :params => {:issue_id => i})
+       else [] end]
   end
 
   haml :archive
