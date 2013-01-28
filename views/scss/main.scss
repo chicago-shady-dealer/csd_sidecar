@@ -317,10 +317,12 @@ body#about {
         @include span-columns(3);
         @include omega;
     }
-    ul {
-        list-style-type: none;
-        padding: 0; 
-    } 
+    #board, #writers {
+        ul {
+            list-style-type: none;
+            padding: 0; 
+        } 
+    }
 }
 
 body#archive {
