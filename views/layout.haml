@@ -2,8 +2,8 @@
 %html
   %head
     %title
-      The Chicago Shady Dealer 
       = yield_content :title
+      The Chicago Shady Dealer 
     %link{:href => "/styles/main.css", :media => "screen, handheld", :rel => "stylesheet", :type => "text/css"}/
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"}
@@ -16,7 +16,9 @@
           %img{:alt => "The Chicago Shady Dealer", :title => "Chicago Shady Dealer masthead", :src => "/images/header.png", :style => "visibility: hidden; width: 100%;"}
         %h1 The Chicago Shady Dealer
         %h2 The Only Intentional Humor Publication of the University of Chicago
-      #main= yield
+        
+      = yield
+      
       %footer
         #copyright
           = "Copyright 2005&ndash;#{Time.now.strftime("%Y")}:"
@@ -26,7 +28,7 @@
           %a{:href => "/about"} About
           %a{:href => "/archive"} Archive 
         #powered_by
-          Designed by
+          Designed and built by
           %a{:href => "http://dominick.me"}
             D. LoBraico,
           Powered by

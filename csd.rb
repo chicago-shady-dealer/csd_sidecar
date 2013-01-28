@@ -8,7 +8,7 @@ require './models/published_issue.rb'
 
 set :haml, :format => :html5
 
-ISSUE_ID = 3 # FIXME 
+ISSUE_ID = 4 # PublishedIssue.find(:last).id # FIXME 
 
 use Rack::Cache,
   :verbose => true,

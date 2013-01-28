@@ -1,4 +1,9 @@
-%h1 Archive
+- content_for :title do
+  Archive &mdash;
+  
+%h1#page_header Archive
+
+%p{:style => "max-width: 33em;"} We've done our best to keep track of old issues over the millenia, but unfortunately we've only managed to safely store records for the last decade or so. Find below articles from recent issues and all the PDFs we have. 
 
 #archive_contents
   - @issues.keys.sort.reverse.each do |v|

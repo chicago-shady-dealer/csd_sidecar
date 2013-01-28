@@ -86,6 +86,7 @@ body {
         }
         &#right {
             @include span-columns(3);
+            @include omega(3n);
             @include media($mobile) {
                 @include span-columns(3);
             }
@@ -315,15 +316,20 @@ body#about {
 }
 
 body#archive {
-    @include span-columns(12);
-    h1 {
+    h1#page_header {
         font-family: "Proxima Nova";
+        margin-top: 100px;
     }
+    @include span-columns(12);
     #archive_contents {
         @include span-columns(12);
         @include omega;
         h2 {
-        font-family: "Proxima Nova";
+            font-family: "Proxima Nova";
+            &:hover {
+                color: #646464;
+                cursor: pointer;
+            }
         }
         .issues {
             display: none;
