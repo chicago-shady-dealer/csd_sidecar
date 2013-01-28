@@ -248,27 +248,35 @@ body#show {
                 width: 100%;
             }
         }
-    }
-    section#right {
-        @include span-columns(6);
-        @include media($narrow) {
-            @include span-columns(6);
-        }
-        @include media($mobile) {
-            @include span-columns(12);
-        }
         
-        #in_the_news {
+        section#right {
+            @include omega(2n);
             @include span-columns(6);
-            
             @include media($narrow) {
-                @include span-columns(12);
+                @include span-columns(6);
             }
-            
             @include media($mobile) {
                 @include span-columns(12);
             }
             
+            h1 {
+                font-family: NeoRetroDraw;
+                font-size: 1.25em;
+                border-bottom: 1px solid #ccc;
+            }
+            
+            #in_the_news {
+                @include span-columns(6);
+                
+                @include media($narrow) {
+                    @include span-columns(12);
+                }
+                
+                @include media($mobile) {
+                    @include span-columns(12);
+                }
+                
+            }
         }
     }
 }

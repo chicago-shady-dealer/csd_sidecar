@@ -10,16 +10,16 @@
   #images  
     -  @article.images.each do |i|
       = img i.file.url, h(i.description)
-%section#right
-  #in_the_news
-    %h1 Also in the news
-    %ul
-      - @in_the_news.each do |a|
-        %li
-          = headline_link(a)
-          .byline
-            by 
-            = a.byline
+  %section#right
+    #in_the_news
+      %h1 Also in the news
+      %ul
+        - @in_the_news.each do |a|
+          %li
+            = headline_link(a)
+            .byline
+              by 
+              = a.byline
 
   /#from_the_archive
   /  %h1 From the archive
