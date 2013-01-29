@@ -19,8 +19,6 @@ before do
     cache_control :public, :must_revalidate, :max_age => 600
 end
 
-use Rack::GoogleAnalytics, :tracker => 'UA-37964467-1'
-
 helpers do
   def img(path, alt)
     "<img src='http://linus.chicagoshadydealer.com#{path}' alt='#{alt}' />"

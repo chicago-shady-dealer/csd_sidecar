@@ -6,8 +6,6 @@ gem 'activeresource', :require => 'active_resource'
 gem 'shotgun'
 gem 'rack-cache'
 
-gem 'rack-google-analytics'
-
 gem 'haml'
 gem 'sass'
 gem 'neat'
