@@ -66,6 +66,11 @@ body {
         background-origin: content-box;
         -webkit-background-origin: content-box;
 
+        img {
+            width: 101.5%;
+            visibility: hidden;
+        }
+
         h1, h2 {
             display: none;
         }
