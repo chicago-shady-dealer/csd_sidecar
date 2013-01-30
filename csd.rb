@@ -42,10 +42,13 @@ helpers do
     Rack::Utils.escape_html(text)
   end
 
+  def pretty_url(article)
+    "/articles/#{article.id}-#{article.headline.downcase.gsub(/\W/,'-').squeeze('-').chomp('-')}"
+  end
+
   def headline_link(article)
     headline = article.headline
-    url = "/articles/#{article.id}"
-    "<a href='#{url}'>#{headline}</a>"
+    "<a href='#{pretty_url(article)}'>#{headline}</a>"
   end
 
   def pdf_link(url)
