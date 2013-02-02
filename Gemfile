@@ -10,4 +10,5 @@ gem 'haml'
 gem 'sass'
 gem 'neat'
 
+gem 'builder'
 gem 'sanitize'

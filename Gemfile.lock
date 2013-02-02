@@ -65,6 +65,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeresource
+  builder
   haml
   neat
   rack-cache

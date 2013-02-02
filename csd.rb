@@ -62,18 +62,6 @@ helpers do
   end
 end
 
-get '/articles/:id' do
-  @controller = "show"
-  @article = Article.find(params[:id])
-  last_modified @article.updated_at
-  @in_the_news = Article.find(:all, :params => {:issue_id => ISSUE_ID}).sort_by { rand }.slice(0, 5)
-  haml :show
-end
-
-get '/articles' do
-  redirect '/'
-end
-
 get '/' do
   @controller = "index"
   
@@ -91,6 +79,18 @@ get '/' do
   @headlines = @rest[3, @rest.length - 3].sort_by { rand }.slice(0, 5)
   
   haml :index
+end
+
+get '/articles' do
+  redirect '/'
+end
+
+get '/articles/:id' do
+  @controller = "show"
+  @article = Article.find(params[:id])
+  last_modified @article.updated_at
+  @in_the_news = Article.find(:all, :params => {:issue_id => ISSUE_ID}).sort_by { rand }.slice(0, 5)
+  haml :show
 end
 
 get '/about' do
@@ -113,6 +113,31 @@ get '/archive' do
   end
 
   haml :archive
+end
+
+get '/feed.xml' do
+  @articles = Article.find(:all).last(10)
+  
+  builder do |xml|
+    xml.instruct! :xml, :version => '1.0'
+    xml.rss :version => '2.0' do
+      xml.channel do
+        xml.title "Chicago Shady Dealer"
+        xml.description "The latest stories from the University of Chicago's only intentional humor publication."
+        xml.link "http://chicagoshadydealer.com"
+
+        @articles.each do |article|
+          xml.item do
+            xml.title       article.headline
+            xml.link        pretty_url(article)
+            xml.description article.clean_body
+            xml.pubDate     Time.parse(article.created_at.to_s).rfc822()
+            xml.guid        pretty_url(article)
+          end
+        end
+      end
+    end
+  end
 end
 
 get "/styles/*.css" do |path|
