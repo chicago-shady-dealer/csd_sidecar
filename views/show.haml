@@ -7,10 +7,10 @@
     by
     %span.writer= @article.byline
   #body!=   @article.clean_body
-  #images  
-    -  @article.images.each do |i|
-      = img i.file.url, h(i.description)
   %section#right
+    #images  
+      -  @article.images.each do |i|
+        = img i.file.url, h(i.description)
     #in_the_news
       %h1 Also in the news
       %ul

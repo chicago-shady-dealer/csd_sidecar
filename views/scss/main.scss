@@ -239,33 +239,26 @@ body {
             }
             #body {
                 @include span-columns(6);
+                
+                @include media($narrow) {
+                    @include span-columns(6);
+                }
+                
                 @include media($mobile) {
-                    @include span-columns(12);
+                    @include span-columns(6 of 6);
                 }
                 text-align: justify;
                 p {
                 }
             }
-            #images {
-                @include span-columns(3);
+            section#right {
+                @include span-columns(6);
+                
                 @include media($narrow) {
                     @include span-columns(6 of 12);
                 }
                 @include media($mobile) {
                     @include span-columns(6 of 6);
-                }
-                img {
-                    width: 100%;
-                }
-            }
-            
-            section#right {
-                @include span-columns(6);
-                @include media($narrow) {
-                    @include span-columns(6);
-                }
-                @include media($mobile) {
-                    @include span-columns(12);
                 }
                 
                 h1 {
@@ -274,11 +267,25 @@ body {
                     border-bottom: 1px solid #ccc;
                 }
                 
-                #in_the_news {
-                    @include span-columns(6);
+                #images {
+                    @include span-columns(6 of 6);
                     
                     @include media($narrow) {
-                        @include span-columns(12);
+                        @include span-columns(6 of 6);
+                    }
+                    @include media($mobile) {
+                        @include span-columns(6 of 6);
+                    }
+                    img {
+                        width: 100%;
+                    }
+                }
+                
+                #in_the_news {
+                    @include span-columns(3 of 6);
+                    
+                    @include media($narrow) {
+                        @include span-columns(6 of 6);
                     }
                     
                     @include media($mobile) {
