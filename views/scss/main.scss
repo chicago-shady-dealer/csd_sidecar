@@ -6,15 +6,15 @@ $narrow: new-breakpoint(max-width 900px 12);
 $visual_grid: true;
 
 @mixin image-2x($image/*, $width, $height*/) {
-  @media (min--moz-device-pixel-ratio: 1.3),
-         (-o-min-device-pixel-ratio: 2.6/2),
-         (-webkit-min-device-pixel-ratio: 1.3),
-         (min-device-pixel-ratio: 1.3),
-         (min-resolution: 1.3dppx) {
-    /* on retina, use image that's scaled by 2 */
-    background-image: url($image);
+    @media (min--moz-device-pixel-ratio: 1.3),
+    (-o-min-device-pixel-ratio: 2.6/2),
+    (-webkit-min-device-pixel-ratio: 1.3),
+    (min-device-pixel-ratio: 1.3),
+    (min-resolution: 1.3dppx) {
+        /* on retina, use image that's scaled by 2 */
+        background-image: url($image);
     /*background-size: $width $height;*/
-  }
+    }
 }
 
 body {
@@ -27,10 +27,10 @@ body {
     }
     
     p {
-       text-align: justify;
-       font-family: "Cardo";
-       line-height: 1.2em;
-       font-size: 1em;
+        text-align: justify;
+        font-family: "Cardo";
+        line-height: 1.2em;
+        font-size: 1em;
     }
 
     p a, ul li a {
@@ -223,171 +223,170 @@ body {
             text-align: right;
         }
     }
-}
 
-body#show {
-    article {
-        h1 {
-            font-family: "Proxima Nova";
-            font-size: 1.5em;
-            line-height: 1.0em;
-        }
-        #byline {
-            font-style: italic;
-            .writer {
-                font-style: normal;
-            }
-        }
-        #body {
-            @include span-columns(6);
-            @include media($mobile) {
-                @include span-columns(12);
-            }
-            text-align: justify;
-            p {
-            }
-        }
-        #images {
-            @include span-columns(3);
-            @include media($narrow) {
-                @include span-columns(6 of 12);
-            }
-            @include media($mobile) {
-                @include span-columns(6 of 6);
-            }
-            img {
-                width: 100%;
-            }
-        }
-        
-        section#right {
-            @include omega(2n);
-            @include span-columns(6);
-            @include media($narrow) {
-                @include span-columns(6);
-            }
-            @include media($mobile) {
-                @include span-columns(12);
-            }
-            
+    &#show {
+        article {
             h1 {
-                font-family: NeoRetroDraw;
-                font-size: 1.25em;
-                border-bottom: 1px solid #ccc;
+                font-family: "Proxima Nova";
+                font-size: 1.5em;
+                line-height: 1.0em;
             }
-            
-            #in_the_news {
+            #byline {
+                font-style: italic;
+                .writer {
+                    font-style: normal;
+                }
+            }
+            #body {
                 @include span-columns(6);
-                
-                @include media($narrow) {
+                @include media($mobile) {
                     @include span-columns(12);
                 }
-                
+                text-align: justify;
+                p {
+                }
+            }
+            #images {
+                @include span-columns(3);
+                @include media($narrow) {
+                    @include span-columns(6 of 12);
+                }
+                @include media($mobile) {
+                    @include span-columns(6 of 6);
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            
+            section#right {
+                @include span-columns(6);
+                @include media($narrow) {
+                    @include span-columns(6);
+                }
                 @include media($mobile) {
                     @include span-columns(12);
                 }
                 
+                h1 {
+                    font-family: NeoRetroDraw;
+                    font-size: 1.25em;
+                    border-bottom: 1px solid #ccc;
+                }
+                
+                #in_the_news {
+                    @include span-columns(6);
+                    
+                    @include media($narrow) {
+                        @include span-columns(12);
+                    }
+                    
+                    @include media($mobile) {
+                        @include span-columns(12);
+                    }
+                    
+                }
             }
         }
     }
-}
 
-body#about {
-    h2, h3 {
-        font-family: "Proxima Nova";
-        font-weight: bold;
-    }
-    #header {
-        border-bottom: 1px solid #ccc;
-        @include span-columns(12);
-        text-align: jusify;
-        h1 {
-            #the {
-                font-family: "NeoRetroShadow";
-                clear: both;
-                display: block;
-                line-height: 1.2em;
-            }
-            font-family: "NeoRetroDraw";
-            margin-bottom: 0.2em;
-        }
-        h2 {
-            margin-top: 0;
-            text-indent: 2px;
-            font-size: 1.7em;
-            letter-spacing: 3px;
-        }
-    }
-    #introduction {
-        @include span-columns(6);
-    }
-    #board {
-        @include span-columns(3);
-    }
-    #writers {
-        @include span-columns(3);
-        @include omega;
-    }
-    #board, #writers {
-        ul {
-            list-style-type: none;
-            padding: 0; 
-        } 
-    }
-}
-
-body#archive {
-    h1#page_header {
-        font-family: "Proxima Nova";
-        margin-top: 100px;
-    }
-    @include span-columns(12);
-    #archive_contents {
-        @include span-columns(12);
-        @include omega;
-        h2 {
+    &#about {
+        h2, h3 {
             font-family: "Proxima Nova";
-            &:hover {
-                color: #646464;
-                cursor: pointer;
+            font-weight: bold;
+        }
+        #header {
+            border-bottom: 1px solid #ccc;
+            @include span-columns(12);
+            text-align: jusify;
+            h1 {
+                #the {
+                    font-family: "NeoRetroShadow";
+                    clear: both;
+                    display: block;
+                    line-height: 1.2em;
+                }
+                font-family: "NeoRetroDraw";
+                margin-bottom: 0.2em;
+            }
+            h2 {
+                margin-top: 0;
+                text-indent: 2px;
+                font-size: 1.7em;
+                letter-spacing: 3px;
             }
         }
-        .issues {
-            display: none;
+        #introduction {
+            @include span-columns(6);
         }
-        .issue {
-            @include span-columns(6 of 12);
-            @include omega(2n);
-            @include media($narrow) {
-                @include span-columns(12);
-            }
-            @include media($mobile) {
-                @include span-columns(12);
-            }
-            
-            .pdf {
-                font-family: "Proxima Nova";
-                font-size: 0.7em;
-            }
-            
-            h3 {
-                margin: 0;
-            }
+        #board {
+            @include span-columns(3);
+        }
+        #writers {
+            @include span-columns(3);
+            @include omega;
+        }
+        #board, #writers {
             ul {
-                margin: 0;
-                padding: 0;
                 list-style-type: none;
+                padding: 0; 
+            } 
+        }
+    }
+
+    &#archive {
+        h1#page_header {
+            font-family: "Proxima Nova";
+            margin-top: 100px;
+        }
+        @include span-columns(12);
+        #archive_contents {
+            @include span-columns(12);
+            @include omega;
+            h2 {
+                font-family: "Proxima Nova";
+                &:hover {
+                    color: #646464;
+                    cursor: pointer;
+                }
+            }
+            .issues {
+                display: none;
+            }
+            .issue {
+                @include span-columns(6 of 12);
+                @include omega(2n);
+                @include media($narrow) {
+                    @include span-columns(12);
+                }
+                @include media($mobile) {
+                    @include span-columns(12);
+                }
                 
-                margin-top: 1em;
+                .pdf {
+                    font-family: "Proxima Nova";
+                    font-size: 0.7em;
+                }
                 
-                li {
-                    color: black;
-                    margin-bottom: 1em;
-                    .byline {
-                        display: inline;
-                        /* float: left; */
-                        color: #818181;
-                        font-size: 0.8em;
+                h3 {
+                    margin: 0;
+                }
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                    
+                    margin-top: 1em;
+                    
+                    li {
+                        color: black;
+                        margin-bottom: 1em;
+                        .byline {
+                            display: inline;
+                            /* float: left; */
+                            color: #818181;
+                            font-size: 0.8em;
+                        }
                     }
                 }
             }
