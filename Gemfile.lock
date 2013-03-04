@@ -51,6 +51,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rubypants-unicode (0.2.3)
     sanitize (2.0.3)
       nokogiri (>= 1.4.4, < 1.6)
       nokogiri (>= 1.4.4, < 1.6)
@@ -69,6 +70,7 @@ DEPENDENCIES
   haml
   neat
   rack-cache
+  rubypants-unicode
   sanitize
   sass
   shotgun
