@@ -1,4 +1,4 @@
-source :rubygems
+source "https://rubygems.org"
 gem 'sinatra', :git => "git://github.com/sinatra/sinatra.git"
 gem 'sinatra-contrib', :git => "git://github.com/sinatra/sinatra-contrib.git"
 
@@ -10,7 +10,7 @@ gem 'haml'
 gem 'sass'
 gem 'neat'
 # https://github.com/cdchapman/rubypants-unicode
-gem 'rubypants-unicode'
+#gem 'rubypants-unicode'
 
 gem 'builder'
 gem 'sanitize'
