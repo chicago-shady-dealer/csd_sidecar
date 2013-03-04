@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'sinatra'
 require './csd.rb'
 
 log = File.new('log/sinatra.log', 'a')
