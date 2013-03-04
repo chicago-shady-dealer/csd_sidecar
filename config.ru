@@ -1,4 +1,7 @@
 require 'rubygems'
+require 'bundler'
+Bundler.setup
+
 require './csd.rb'
 
 log = File.new('log/sinatra.log', 'a')
