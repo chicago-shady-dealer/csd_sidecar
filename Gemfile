@@ -9,6 +9,8 @@ gem 'rack-cache'
 gem 'haml'
 gem 'sass'
 gem 'neat'
+# https://github.com/cdchapman/rubypants-unicode
+gem 'rubypants-unicode'
 
 gem 'builder'
 gem 'sanitize'
