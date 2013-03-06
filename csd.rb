@@ -25,14 +25,14 @@ helpers do
   end
 
   def primary_img(article)
-    image = article.images.first
+    image = article.image
     path = "http://linus.chicagoshadydealer.com#{image.file.primary.url}"
     alt = image.description
     "<img src='#{path}' alt='#{alt}' />"
   end
   
   def secondary_img(article)
-    image = article.images.first
+    image = article.image
     path = "#{image.file.secondary.url}"
     alt = image.description
     "<img src='http://linus.chicagoshadydealer.com#{path}' alt='#{alt}' />"
@@ -66,7 +66,7 @@ get '/' do
   @controller = "index"
   
   current_issue = Article.find(:all, :params => {:issue_id => ISSUE_ID})
-  @articles_with_images = current_issue.select {|a| not (a.images.nil? or a.images.empty?) }
+  @articles_with_images = current_issue.select {|a| a.image.file.url.present? }
   
   @primary = @articles_with_images[0]
   @s1 = @articles_with_images[1]

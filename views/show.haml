@@ -9,8 +9,7 @@
   #body!=   @article.clean_body
   %section#right
     #images  
-      -  @article.images.each do |i|
-        = img i.file.url, h(i.description)
+      = img @article.image.file.url, h(@article.image.description)
     #in_the_news
       %h1 Also in the news
       %ul
