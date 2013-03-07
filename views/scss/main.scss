@@ -60,8 +60,8 @@ body {
             @include span-columns(12);
             @include omega;
             
-            background-image: url('/images/header.png');
-            @include image-2x("/images/header2x.png");
+            background-image: url('/images/historical_header.png');
+            @include image-2x("/images/historical_header2x.png");
             
             background-position: left top;
             background-size: 101.5% auto;
