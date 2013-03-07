@@ -8,8 +8,9 @@
     %span.writer= @article.byline
   #body!=   @article.clean_body
   %section#right
-    #images  
-      = img @article.image.file.url, h(@article.image.description)
+    - if @article.image.file.url.present?
+      #images  
+        = img @article.image.file.url, h(@article.image.description)
     #in_the_news
       %h1 Also in the news
       %ul
