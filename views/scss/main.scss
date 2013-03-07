@@ -27,6 +27,7 @@ body {
     }
     
     p {
+        color: #222;
         text-align: justify;
         font-family: "Cardo";
         line-height: 1.2em;
@@ -39,7 +40,7 @@ body {
 
     a {
         text-decoration: none;
-        color: black;
+        color: #222;
         &:hover {
             color: #646464;
         }
@@ -47,7 +48,7 @@ body {
             color: #818181;
             font-size: 0.8em;
             &#continued:hover {
-                color: black;
+                color: #222;
             }
         }
     }
@@ -117,7 +118,7 @@ body {
                 margin-top: 1em;
                 
                 li {
-                    color: black;
+                    color: #222;
                     margin-bottom: 1em;
                     .byline {
                         display: inline;
@@ -279,6 +280,18 @@ body {
                     img {
                         width: 100%;
                     }
+
+                    .credit {
+                        float: right;
+                        color: #818181;
+                        font-size: 0.8em;
+                    }
+
+                    .caption {
+                        float: left;
+                        font-size: 1em;
+                        color: #222;
+                    }
                 }
                 
                 #in_the_news {
@@ -386,7 +399,7 @@ body {
                     margin-top: 1em;
                     
                     li {
-                        color: black;
+                        color: #222;
                         margin-bottom: 1em;
                         .byline {
                             display: inline;

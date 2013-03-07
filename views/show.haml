@@ -11,6 +11,8 @@
     - if @article.image.file.url.present?
       #images  
         = img @article.image.file.url, h(@article.image.description)
+        .credit= @article.image.credit
+        .caption= @article.image.description
     #in_the_news
       %h1 Also in the news
       %ul

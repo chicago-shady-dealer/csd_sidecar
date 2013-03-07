@@ -8,16 +8,21 @@ require './models/published_issue.rb'
 
 set :haml, :format => :html5
 
+# Set RACK_ENV to development to override this.
+set :environment, :production
+
 ISSUE_ID     = 5 # PublishedIssue.find(:last).id # FIXME 
 TOP_STORY_ID = 103
 
-use Rack::Cache,
-  :verbose => true,
-  :metastore => "file:/tmp/cache/meta",
-  :entitystore => "file:/tmp/cache/body"
+if settings.environment == :production
+    use Rack::Cache,
+        :verbose => true,
+        :metastore => "file:/tmp/cache/meta",
+        :entitystore => "file:/tmp/cache/body"
 
-before do
-    cache_control :public, :must_revalidate, :max_age => 600
+    before do
+        cache_control :public, :must_revalidate, :max_age => 600
+    end
 end
 
 helpers do
