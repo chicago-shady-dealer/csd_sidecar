@@ -3,7 +3,7 @@
 @import "fonts";
 $mobile: new-breakpoint(max-width 500px 6);
 $narrow: new-breakpoint(max-width 900px 12);
-$visual_grid: true;
+//$visual_grid: true;
 
 @mixin image-2x($image/*, $width, $height*/) {
     @media (min--moz-device-pixel-ratio: 1.3),
