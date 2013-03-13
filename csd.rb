@@ -10,9 +10,10 @@ set :haml, :format => :html5
 
 # Set RACK_ENV to development to override this.
 set :environment, :production
+#set :environment, :development
 
-ISSUE_ID     = 5 # PublishedIssue.find(:last).id # FIXME 
-TOP_STORY_ID = 103
+ISSUE_ID     = 73 # PublishedIssue.find(:last).id # FIXME 
+TOP_STORY_ID = 118
 
 if settings.environment == :production
     use Rack::Cache,
@@ -73,7 +74,9 @@ get '/' do
   
   top_story = Article.find(TOP_STORY_ID)
   current_issue = Article.find(:all, :params => {:issue_id => ISSUE_ID})
-  @articles_with_images = current_issue.select {|a| a.image.file.url.present? and (a.id != TOP_STORY_ID)}
+  @articles_with_images = current_issue.select {|a| a.image.file.url.present? \
+                                                and (a.id != TOP_STORY_ID)    \
+                                                and (not a.websclusive)}
   
   @primary = top_story 
   @s1 = @articles_with_images[0]
