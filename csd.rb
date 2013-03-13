@@ -9,8 +9,8 @@ require './models/published_issue.rb'
 set :haml, :format => :html5
 
 # Set RACK_ENV to development to override this.
-set :environment, :production
-#set :environment, :development
+#set :environment, :production
+set :environment, :development
 
 ISSUE_ID     = 73 # PublishedIssue.find(:last).id # FIXME 
 TOP_STORY_ID = 118
@@ -84,8 +84,8 @@ get '/' do
   
   used_ids = [@primary, @s1, @s2, @s3].map {|a| a.id}
   @rest = current_issue.select {|a| not a.id.in? used_ids}
-  @sidebar = @rest[0,3]
-  @headlines = @rest[3, @rest.length - 3].sort_by { rand }.slice(0, 5)
+  @sidebar = @rest[0,4]
+  @headlines = @rest[4, @rest.length - 4].sort_by { rand }.slice(0, 5)
   
   haml :index
 end
