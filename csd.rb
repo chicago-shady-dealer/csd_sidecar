@@ -9,8 +9,8 @@ require './models/published_issue.rb'
 set :haml, :format => :html5
 
 # Set RACK_ENV to development to override this.
-#set :environment, :production
-set :environment, :development
+set :environment, :production
+#set :environment, :development
 
 ISSUE_ID     = 73 # PublishedIssue.find(:last).id # FIXME 
 TOP_STORY_ID = 118
