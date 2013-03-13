@@ -73,10 +73,9 @@ get '/' do
   @controller = "index"
   
   top_story = Article.find(TOP_STORY_ID)
-  current_issue = Article.find(:all, :params => {:issue_id => ISSUE_ID})
+  current_issue = Article.find(:all, :params => {:issue_id => ISSUE_ID}).select {|a| not a.websclusive}
   @articles_with_images = current_issue.select {|a| a.image.file.url.present? \
-                                                and (a.id != TOP_STORY_ID)    \
-                                                and (not a.websclusive)}
+                                                and (a.id != TOP_STORY_ID) }
   
   @primary = top_story 
   @s1 = @articles_with_images[0]
