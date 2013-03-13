@@ -145,7 +145,8 @@ body {
         &#sidebar {
             @include span-columns(3);
             @include media($mobile) {
-                @include span-columns(3);
+                @include span-columns(6);
+                @include columns(2);
             }
             
             article {
