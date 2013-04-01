@@ -98,14 +98,13 @@ body {
         }
         
         h3 {
-            margin-top: 2em;
             font-family: "NeoRetroDraw", sans-serif;
         }
 
         
     }
     
-    #row1, #row2 {
+    #row1, #row2, #row3 {
         @include span-columns(12);
         @include omega;
         clear: both;
