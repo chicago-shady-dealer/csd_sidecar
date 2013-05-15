@@ -12,8 +12,8 @@ set :haml, :format => :html5
 set :environment, :production
 #set :environment, :development
 
-ISSUE_ID     = 73 # PublishedIssue.find(:last).id # FIXME 
-TOP_STORY_ID = 118
+ISSUE_ID     = 75 # PublishedIssue.find(:last).id # FIXME 
+TOP_STORY_ID = 151
 
 if settings.environment == :production
     use Rack::Cache,
@@ -70,14 +70,6 @@ helpers do
 end
 
 get '/' do
-  haml :afd, :layout => :plain
-end
-
-get '/afd' do
-  haml :afd, :layout => :plain
-end
-
-get '/articles' do
   @controller = "index"
   
   top_story = Article.find(TOP_STORY_ID)
@@ -96,6 +88,14 @@ get '/articles' do
   @headlines = @rest[4, @rest.length - 4].sort_by { rand }.slice(0, 5)
   
   haml :index
+end
+
+get '/afd' do
+  haml :afd, :layout => :plain
+end
+
+get '/articles' do
+    redirect '/'
 end
 
 get '/articles/:id' do
