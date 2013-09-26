@@ -12,8 +12,8 @@ set :haml, :format => :html5
 set :environment, :production
 #set :environment, :development
 
-ISSUE_ID     = 76 # PublishedIssue.find(:last).id # FIXME 
-TOP_STORY_ID = 169
+ISSUE_ID     = 77 # PublishedIssue.find(:last).id # FIXME 
+TOP_STORY_ID = 193
 
 if settings.environment == :production
     use Rack::Cache,
