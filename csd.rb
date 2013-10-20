@@ -84,8 +84,8 @@ get '/' do
   
   used_ids = [@primary, @s1, @s2, @s3].map {|a| a.id}
   @rest = current_issue.select {|a| not a.id.in? used_ids}
-  @sidebar = @rest[0,4]
-  @headlines = @rest[4, @rest.length - 4]
+  @sidebar = @rest.shift(4)
+  @headlines = @rest
   
   haml :index
 end
@@ -102,7 +102,7 @@ get '/articles/:id' do
   @controller = "show"
   @article = Article.find(params[:id])
   last_modified @article.updated_at
-  @in_the_news = Article.find(:all, :params => {:issue_id => ISSUE_ID}).sort_by { rand }.slice(0, 5)
+  @in_the_news = Article.find(:all, :params => {:issue_id => ISSUE_ID})
   haml :show
 end
 
