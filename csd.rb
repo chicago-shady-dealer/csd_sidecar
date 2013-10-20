@@ -85,7 +85,7 @@ get '/' do
   used_ids = [@primary, @s1, @s2, @s3].map {|a| a.id}
   @rest = current_issue.select {|a| not a.id.in? used_ids}
   @sidebar = @rest[0,4]
-  @headlines = @rest[4, @rest.length - 4].sort_by { rand }.slice(0, 5)
+  @headlines = @rest[4, @rest.length - 4]
   
   haml :index
 end
