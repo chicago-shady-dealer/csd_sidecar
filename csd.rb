@@ -74,13 +74,13 @@ get '/' do
   
   top_story = Article.find(TOP_STORY_ID)
   current_issue = Article.find(:all, :params => {:issue_id => ISSUE_ID})
-  @articles_with_images = current_issue.select {|a| a.image.file.url.present? \
-                                                and (a.id != TOP_STORY_ID) }
+  @articles_by_images = current_issue.select {|a| (a.id != TOP_STORY_ID) }
+                          .sort_by {|a| a.image.file.url.present? ? 0 : 1 }
   
   @primary = top_story 
-  @s1 = @articles_with_images[0]
-  @s2 = @articles_with_images[1]
-  @s3 = @articles_with_images[2]
+  @s1 = @articles_by_images[0]
+  @s2 = @articles_by_images[1]
+  @s3 = @articles_by_images[2]
   
   used_ids = [@primary, @s1, @s2, @s3].map {|a| a.id}
   @rest = current_issue.select {|a| not a.id.in? used_ids}
