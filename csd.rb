@@ -33,6 +33,7 @@ helpers do
 
   def primary_img(article)
     image = article.image
+    return "" unless image.file.primary.url.present?
     path = "http://linus.chicagoshadydealer.com#{image.file.primary.url}"
     alt = image.description
     "<img src='#{path}' alt='#{alt}' />"
@@ -40,6 +41,7 @@ helpers do
   
   def secondary_img(article)
     image = article.image
+    return "" unless image.file.primary.url.present?
     path = "#{image.file.secondary.url}"
     alt = image.description
     "<img src='http://linus.chicagoshadydealer.com#{path}' alt='#{alt}' />"
