@@ -13,7 +13,7 @@ set :environment, :production
 #set :environment, :development
 
 ISSUE_ID     = 80 # PublishedIssue.find(:last).id # FIXME 
-TOP_STORY_ID = 231
+TOP_STORY_ID = 245
 
 if settings.environment == :production
     use Rack::Cache,
