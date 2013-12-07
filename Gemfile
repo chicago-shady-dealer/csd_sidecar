@@ -14,3 +14,5 @@ gem 'neat'
 
 gem 'builder'
 gem 'sanitize'
+
+puts 'Running Gemfile'
