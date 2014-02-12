@@ -74,7 +74,6 @@ end
 get '/' do
   @controller = "index"
   
-  top_story = Article.find(TOP_STORY_ID)
   current_issue = Article.find(:all, :params => {:issue_id => ISSUE_ID})
   @articles_by_images = current_issue.sort_by {|a| a.image.file.url.present? ? 0 : 1 }
   
