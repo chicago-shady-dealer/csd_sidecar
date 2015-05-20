@@ -12,7 +12,7 @@ set :haml, :format => :html5
 set :environment, :production
 #set :environment, :development
 
-ISSUE_ID     = PublishedIssue.find(:all).sort_by {|x| x.distribution }.reversed.id 
+ISSUE_ID     = PublishedIssue.find(:all).sort_by {|x| x.distribution }.last.id 
 # TOP_STORY_ID = 278
 
 if settings.environment == :production
