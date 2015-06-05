@@ -28,13 +28,13 @@ end
 
 helpers do
   def img(path, alt)
-    "<img src='http://linus.chicagoshadydealer.com#{path}' alt='#{alt}' />"
+    "<img src='#{path}' alt='#{alt}' />"
   end
 
   def primary_img(article)
     image = article.image
     return "" unless image.file.primary.url.present?
-    path = "http://linus.chicagoshadydealer.com#{image.file.primary.url}"
+    path = image.file.primary.url
     alt = image.description
     "<img src='#{path}' alt='#{alt}' />"
   end
@@ -42,9 +42,9 @@ helpers do
   def secondary_img(article)
     image = article.image
     return "" unless image.file.primary.url.present?
-    path = "#{image.file.secondary.url}"
+    path = image.file.secondary.url
     alt = image.description
-    "<img src='http://linus.chicagoshadydealer.com#{path}' alt='#{alt}' />"
+    "<img src='http://#{path}' alt='#{alt}' />"
   end
   
   def h(text)
@@ -61,7 +61,7 @@ helpers do
   end
 
   def pdf_link(url)
-    "<a href='http://linus.chicagoshadydealer.com#{url}'>(PDF)</a>"
+    "<a href='#{url}'>(PDF)</a>"
   end
 
   def excerpt(article, length)
