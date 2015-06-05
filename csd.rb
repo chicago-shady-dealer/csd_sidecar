@@ -44,7 +44,7 @@ helpers do
     return "" unless image.file.primary.url.present?
     path = image.file.secondary.url
     alt = image.description
-    "<img src='http://#{path}' alt='#{alt}' />"
+    "<img src='#{path}' alt='#{alt}' />"
   end
   
   def h(text)
