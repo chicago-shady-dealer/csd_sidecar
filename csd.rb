@@ -12,8 +12,9 @@ set :haml, :format => :html5
 set :environment, :production
 #set :environment, :development
 
-ISSUE_ID     = PublishedIssue.find(:all).sort_by {|x| x.distribution }.last.id 
-# TOP_STORY_ID = 278
+def get_top_issue()
+  return PublishedIssue.find(:all).sort_by {|x| x.distribution }.last.id
+end
 
 if settings.environment == :production
     use Rack::Cache,
@@ -74,7 +75,7 @@ end
 get '/' do
   @controller = "index"
   
-  current_issue = Article.find(:all, :params => {:issue_id => ISSUE_ID})
+  current_issue = Article.find(:all, :params => {:issue_id => get_top_issue})
   @articles_by_images = current_issue.sort_by {|a| a.image.file.url.present? ? 0 : 1 }
   
   top_story = @articles_by_images.shift
@@ -104,7 +105,7 @@ get '/articles/:id' do
   @controller = "show"
   @article = Article.find(params[:id])
   last_modified @article.updated_at
-  @in_the_news = Article.find(:all, :params => {:issue_id => ISSUE_ID})
+  @in_the_news = Article.find(:all, :params => {:issue_id => get_top_issue})
   haml :show
 end
 
