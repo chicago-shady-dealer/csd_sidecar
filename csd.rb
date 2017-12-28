@@ -23,7 +23,7 @@ if settings.environment == :production
         :entitystore => "file:/tmp/cache/body"
 
     before do
-        cache_control :public, :must_revalidate, :max_age => 600
+        cache_control :public, :must_revalidate, :max_age => 900
     end
 end
 
