@@ -77,7 +77,7 @@ get '/' do
 
   print "About to get current issue"
   current_issue = Article.find(:all, :params => {:issue_id => get_top_issue})
-  print current_issue
+  STDERR.puts current_issue
   @articles_by_images = current_issue.sort_by {|a| a.image.file.url.present? ? 0 : 1 }
 
   top_story = @articles_by_images.shift
@@ -92,9 +92,9 @@ get '/' do
   @sidebar = @rest.shift(4)
   @headlines = @rest
 
-  print "Finished index"
-  print @sidebar
-  print @headlines
+  STDERR.puts "Finished index"
+  STDERR.puts @sidebar
+  STDERR.puts @headlines
 
   haml :index
 end
