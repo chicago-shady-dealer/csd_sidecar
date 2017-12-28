@@ -87,7 +87,7 @@ get '/' do
   @s2 = @articles_by_images[1]
   @s3 = @articles_by_images[2]
 
-  used_ids = [@primary, @s1, @s2, @s3].map {|a| a.id}
+  used_ids = [@primary, @s1].map {|a| a.id}
   @rest = current_issue.select {|a| not a.id.in? used_ids}
   @sidebar = @rest.shift(4)
   @headlines = @rest
