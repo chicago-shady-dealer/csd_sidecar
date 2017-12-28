@@ -39,7 +39,7 @@ helpers do
     alt = image.description
     "<img src='#{path}' alt='#{alt}' />"
   end
-  
+
   def secondary_img(article)
     image = article.image
     return "" unless image.file.primary.url.present?
@@ -47,7 +47,7 @@ helpers do
     alt = image.description
     "<img src='#{path}' alt='#{alt}' />"
   end
-  
+
   def h(text)
     Rack::Utils.escape_html(text)
   end
@@ -74,22 +74,28 @@ end
 
 get '/' do
   @controller = "index"
-  
+
+  print "About to get current issue"
   current_issue = Article.find(:all, :params => {:issue_id => get_top_issue})
+  print current_issue
   @articles_by_images = current_issue.sort_by {|a| a.image.file.url.present? ? 0 : 1 }
-  
+
   top_story = @articles_by_images.shift
-  
-  @primary = top_story 
+
+  @primary = top_story
   @s1 = @articles_by_images[0]
   @s2 = @articles_by_images[1]
   @s3 = @articles_by_images[2]
-  
+
   used_ids = [@primary, @s1, @s2, @s3].map {|a| a.id}
   @rest = current_issue.select {|a| not a.id.in? used_ids}
   @sidebar = @rest.shift(4)
   @headlines = @rest
-  
+
+  print "Finished index"
+  print @sidebar
+  print @headlines
+
   haml :index
 end
 
@@ -133,7 +139,7 @@ end
 
 get '/feed.xml' do
   @articles = Article.find(:all).last(10)
-  
+
   builder do |xml|
     xml.instruct! :xml, :version => '1.0'
     xml.rss :version => '2.0' do

@@ -35,7 +35,7 @@
 %section#right
   %h1 Also in the news
   %ul
-    / - @headlines.each do |a|
+    - @headlines.each do |a|
       %li
         = headline_link(a)
         .byline
